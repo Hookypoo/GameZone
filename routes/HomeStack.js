@@ -1,5 +1,6 @@
+import React from "react";
+import Header from "../shared/Header";
 import { createStackNavigator } from "react-navigation-stack";
-import { createAppContainer } from "react-navigation";
 import Home from "../screens/Home";
 import ReviewDetails from "../screens/ReviewDetails";
 
@@ -7,15 +8,13 @@ const screens = {
     Home: {
         screen: Home,
         navigationOptions: {
-            title: "GameZone",
-            //headerStyle: { backgroundColor: "#eee" }
+            headerTitle: () => <Header />,
         }
     },
     ReviewDetails: {
         screen: ReviewDetails,
         navigationOptions: {
             title: "Review Details",
-            //headerStyle: { backgroundColor: "#eee" }
         }
     }
 }
@@ -27,4 +26,4 @@ const HomeStack = createStackNavigator(screens, {
     }
 });
 
-export default createAppContainer(HomeStack);   // is called Navigator in App.js
+export default HomeStack;
