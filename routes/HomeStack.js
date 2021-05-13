@@ -7,9 +7,11 @@ import ReviewDetails from "../screens/ReviewDetails";
 const screens = {
     Home: {
         screen: Home,
-        navigationOptions: {
-            headerTitle: () => <Header />,
-        }
+        navigationOptions: ({ navigation }) => {
+            return {
+                headerTitle: () => <Header navigation={navigation} title="Gamezone" />,
+            }
+        }  
     },
     ReviewDetails: {
         screen: ReviewDetails,
